@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ComboProto</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
+    </script>
+    <style>
+      #summary {
+        background-color: rgb(50, 50, 50);
+        position: absolute;
+        top: 44px;
+        //bottom: 87px;
+        left: 20px;
+        //width: 248px;
+        width: 200px;
+        height: 600px;
+        border: 2px solid rgb(50, 50, 50);
+        border-radius: 8px;
+      }
+
+      #summary h2, #summary h3, #summary p {
+        color: rgb(240,240,240);
+        text-align: center;
+        font-family: 'Lucida Grande', 'Trebuchet MS';
+        font-size: 90%;
+      }
+
+      @media only screen and (max-width: 1400px) {
+        #summary {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Summary -->
+    <div id="summary">
+      <p>
+        Rough prototype of a 2D brawler with combo attacks. 
+        <br/>
+        <br/>
+        The player has three attacks (up, side, down) that each have
+        a stronger, slower variant. The attacks are executed by holding the direction and pressing the attack key. 
+        <br/>
+        <br/>
+        The player has a double jump and can attack in mid-air. Hold the jump button to
+        increase air time and press the down arrow to fall faster. 
+      </p>
+      <br/>
+      <h3>Controls</h3>
+      <p>
+        Movement: Left and right arrow keys
+      </p>
+      <p>
+        Jump: Spacebar
+      </p>
+      <p>
+        Weak attack (+ Arrow): Z
+      </p>
+      <p>
+        Strong attack (+ Arrow): X
+      </p>
+    </div>
+    <!-- Game Window -->
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">ComboProto</div>
+      </div>
+    </div>
+  </body>
+</html>
